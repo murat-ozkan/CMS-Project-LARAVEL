@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Backend\CopyController;
 use App\Http\Controllers\Backend\DefaultController;
+use App\Http\Controllers\Backend\SettingsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +20,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('nedmin', [DefaultController::class, 'index'])->name('nedmin');
+Route::get('admin', [DefaultController::class, 'index'])->name('admin');
+
+Route::get('admin/settings', [SettingsController::class, 'index'])->name('settings');
