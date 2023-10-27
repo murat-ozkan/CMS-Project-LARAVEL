@@ -10,21 +10,25 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Açıklama</th>
-                            <th>İçerik</th>
-                            <th>Anahtar Değer</th>
-                            <th></th>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                            <th>Edit</th>
                             
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th>Açıklama</th>
-                            <th>İçerik</th>
-                            <th>Anahtar Değer</th>
-                            <th>Buton</th>
-                        </tr>
-                    </tbody>
+                    @foreach ($adminSettings as $setting)                        
+                        <tbody>
+                            <tr>
+                                <td>{{$setting->id}}</td>
+                                <td>{{$setting->settings_description}}</td>
+                                <td>{{$setting->settings_value}}</td>
+                                <td>{{$setting->settings_type}}</td>
+                                <td><i href="#" class="fa fa-trash-o"></i></td>
+                            </tr>
+                        </tbody>
+                    @endforeach
                 </table>
             </div>
         </div>
